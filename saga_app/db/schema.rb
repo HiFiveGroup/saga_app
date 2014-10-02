@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141002214836) do
 
   create_table "chapters", force: true do |t|
     t.string   "title"
-    t.string   "desciption"
+    t.string   "description"
     t.string   "image_url"
     t.string   "scope"
     t.string   "tags"

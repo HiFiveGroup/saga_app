@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Desciption</th>
+      <th>Description</th>
       <th>Image url</th>
       <th>Scope</th>
       <th>Tags</th>
@@ -18,8 +18,8 @@
     <% @chapters.each do |chapter| %>
       <tr>
         <td><%= chapter.title %></td>
-        <td><%= chapter.desciption %></td>
-        <td><%= chapter.image_url %></td>
+        <td><%= chapter.description %></td>
+        <td><img src="<%= chapter.image_url %>"width="400px"></td>
         <td><%= chapter.scope %></td>
         <td><%= chapter.tags %></td>
         <td><%= chapter.category %></td>
