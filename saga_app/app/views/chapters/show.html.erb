@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @chapter.title %>
+</p>
+
+<p>
+  <strong>Desciption:</strong>
+  <%= @chapter.desciption %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @chapter.image_url %>
+</p>
+
+<p>
+  <strong>Scope:</strong>
+  <%= @chapter.scope %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @chapter.tags %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @chapter.category %>
+</p>
+
+<p>
+  <strong>Saga:</strong>
+  <%= @chapter.saga %>
+</p>
+
+<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
+<%= link_to 'Back', chapters_path %>

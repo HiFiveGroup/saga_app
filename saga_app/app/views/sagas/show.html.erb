@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @saga.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @saga.user %>
+</p>
+
+<%= link_to 'Edit', edit_saga_path(@saga) %> |
+<%= link_to 'Back', sagas_path %>
