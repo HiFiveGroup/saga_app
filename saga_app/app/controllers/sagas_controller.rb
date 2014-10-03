@@ -24,17 +24,8 @@ class SagasController < ApplicationController
   # POST /sagas
   # POST /sagas.json
   def create
-    @saga = Saga.new(saga_params)
-
-    respond_to do |format|
-      if @saga.save
-        format.html { redirect_to @saga, notice: 'Saga was successfully created.' }
-        format.json { render :show, status: :created, location: @saga }
-      else
-        format.html { render :new }
-        format.json { render json: @saga.errors, status: :unprocessable_entity }
-      end
-    end
+    @saga = Saga.create(title: params[:saga][:title], user_id: session[:user_id])
+    redirect_to(user_path(session[:user_id]))
   end
 
   # PATCH/PUT /sagas/1

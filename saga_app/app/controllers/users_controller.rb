@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @sagas = Saga.where("user_id = ?", session[:user_id])
   end
 
   # GET /users/new
@@ -45,6 +46,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
       @user.update(user_params)
+      redirect_to(user_path(session[:user_id]))
   end
 
   # DELETE /users/1
