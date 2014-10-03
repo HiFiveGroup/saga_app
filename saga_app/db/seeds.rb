@@ -1,8 +1,6 @@
 User.destroy_all
 Chapter.destroy_all
 
-
-
 User.create(name: "Nico", email: "eskimo@hohoho.com", about_me: "First I model. Then I sing with Velvet Underground. Then much better records I make alone. Then drugs soon after. I later die.", image_url: "http://media.tumblr.com/deacbdce2e4ff2e94fc57de0812c4fcb/tumblr_inline_mi9z6qJkQl1qz4rgp.jpg", gender: "female", city: "Mitte", state: "Berlin", country: "Germany")
 User.create(name: "Miki Berenyi", email: "miki@lush.com", about_me: "My name is Miki, you might know me as one half of the songwriting team in the band Lush.", image_url: "http://i275.photobucket.com/albums/jj319/vonpip_miki/Lush_photos_0030_BIG-1.jpg", gender: "female", city: "Havering", state: "London", country: "United Kingdom")
 User.create(name: "Emma Anderson", email: "emma@lush.com", about_me: "Hi I'm Emma! I played guitar and wrote songs for Lush.", image_url: "http://media-cache-cd0.pinimg.com/736x/9e/22/2d/9e222d509b8851a1d550fb73baff9119.jpg", gender: "female", city: "Brooklyn", state: "NY", country: "United States")
