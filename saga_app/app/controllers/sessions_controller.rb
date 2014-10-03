@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       log_in(user)
       redirect_to(user_path(user))
     else
-      flash[:error] = "Incorrect username or password"
+      flash[:error] = "Incorrect username or password."
       redirect_to(login_path)
     end
   end

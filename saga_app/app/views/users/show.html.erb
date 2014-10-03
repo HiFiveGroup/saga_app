@@ -42,3 +42,7 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+ <%= form_tag(session_path(@user)) do %>
+      <%= submit_tag('Logout') %>
+    <% end %>
