@@ -48,6 +48,7 @@
 <% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Destroy', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
 
 
  <%= form_tag(session_path(@user)) do %>
