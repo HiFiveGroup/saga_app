@@ -11,11 +11,15 @@
 </head>
 <body>
 	<nav>
-		<a href="/" class="logo">SAGA</a>
+	    <% if session[:user_id] %>
+		    <%= link_to 'SAGA', user_path(session[:user_id]), class: 'logo' %>
+	    <% else %>
+	    	<%= link_to 'SAGA', root_path, class: 'logo' %>
+	    <% end %>
 		<ul class="nav">
 			<li class="signup"><%= link_to 'Sign Up', new_user_path %></li>
 			<li class="login"><%= link_to 'Log In', login_path %></li>
-		</ul>	
+		</ul>
 	</nav>
 <%= yield %>
 
