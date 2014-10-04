@@ -1,1 +1,8 @@
-Hello
+<div id="splash">
+	<% @chapters.sample(9).each do |chapter| %>
+	<div class="left">
+			<div class="overlay"><a href="chapters/<%= chapter.id %>"><%= chapter.title %></a></div> 
+			<img src="<%= chapter.image_url %>">
+	</div>
+	<% end %>
+</div>
