@@ -1,4 +1,9 @@
+require './app/helpers/chapters_helper'
+
 class ChaptersController < ApplicationController
+
+  include (ChaptersHelper)
+
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
 
   # GET /chapters
