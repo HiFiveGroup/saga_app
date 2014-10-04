@@ -14,6 +14,7 @@ class ChaptersController < ApplicationController
 
   # GET /chapters/new
   def new
+    @saga_id = params[:saga_id]
     @chapter = Chapter.new
   end
 
@@ -24,7 +25,6 @@ class ChaptersController < ApplicationController
   # POST /chapters
   # POST /chapters.json
   def create
-    binding.pry
     chapter = Chapter.create(chapter_params)
 
 
@@ -42,6 +42,10 @@ class ChaptersController < ApplicationController
     #     format.json { render json: @chapter.errors, status: :unprocessable_entity }
     #   end
     # end
+    @chapter = Chapter.create(chapter_params)
+
+     redirect_to user_path(session[:user_id])
+
   end
 
   # PATCH/PUT /chapters/1

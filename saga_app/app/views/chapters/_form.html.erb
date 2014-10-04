@@ -1,15 +1,4 @@
 <%= form_for(@chapter) do |f| %>
-  <% if @chapter.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@chapter.errors.count, "error") %> prohibited this chapter from being saved:</h2>
-
-      <ul>
-      <% @chapter.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label :title %><br>
@@ -31,11 +20,18 @@
     <%= f.label :tags %><br>
     <%= f.text_field :tags %>
   </div>
-  <div class="field">
+    <div class="field">
     <%= f.label :category %><br>
     <%= f.select(:category, [["Adreneline/Sport"], ["Milestones"], ["Travel"], ["Romance"], ["Food"], ["Education"], ["Culture"], ["Other"]]) %>
   </div><br>
 
+<<<<<<< HEAD
+=======
+  <div class="field">
+  <%= f.hidden_field(:saga_id, :value => @saga_id) %>
+  </div>
+
+>>>>>>> 9c72a28cf0fb3ead3a2358f42f03f2f89025522e
   <div class="actions">
     <%= f.submit %>
   </div>
