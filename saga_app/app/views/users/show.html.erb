@@ -1,7 +1,14 @@
-<h1> PROFILE PAGE </h1>
-<%= link_to("Create New Saga", new_saga_path) %>
+<h1> PROFILE
+  <%= form_tag(session_path(@user)) do %>
+    <%= submit_tag('Logout') %>
+  <% end %>
+</h1>
 <p id="notice"><%= notice %></p>
 <div class="profile_info">
+  <p>
+    <img src="<%= @user.image_url %>">
+  </p>
+
   <p>
     <strong>Name:</strong>
     <%= @user.name %>
@@ -15,11 +22,6 @@
   <p>
     <strong>About me:</strong>
     <%= @user.about_me %>
-  </p>
-
-  <p>
-    <strong>Image url:</strong>
-    <%= @user.image_url %>
   </p>
 
   <p>
@@ -42,11 +44,13 @@
     <%= @user.country %>
   </p>
 <%= link_to 'Edit Profile', edit_user_path(@user) %>
+<%= link_to 'Delete Profile', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
 </div>
 
 <div class="sagas">
 
   <h1>Sagas</h1>
+  <%= link_to("Create New Saga", new_saga_path) %>
   <h1> <% @sagas.each do |saga| %> </h1> </br>
     <h2><%= link_to(saga.title, saga_path(saga.id)) %></h2>
     <% @chapters.each do |chapter| %>
@@ -59,9 +63,5 @@
   <% end %>
 </div>
 
-<%= link_to 'Destroy', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
 
 
- <%= form_tag(session_path(@user)) do %>
-      <%= submit_tag('Logout') %>
- <% end %>
