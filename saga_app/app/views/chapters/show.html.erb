@@ -30,7 +30,6 @@
   <%= @chapter.category %>
 </p>
 
-
-
+<%= link_to 'Add a comment', new_chapter_comment_path(session[:chapter_id]) %>
 <%= link_to 'Edit', edit_chapter_path(@chapter) %> |
 <%= link_to 'Back', chapters_path %>

@@ -26,23 +26,15 @@ User.create(name: "Sailor Strongman", email: "grey@moustache.com", about_me: "Ha
 
 
 Chapter.create(title: "Go surfing in Bali", description: "ride the waves in the warm ocean", image_url: "http://sandiegosurfingschool.com/wp-content/uploads/2014/07/summer-surf.jpg", scope:"In the next five years", category: "Adreneline/Sports")
-
 Chapter.create(title: "Hanglide in La Jolla", description: "soar over the golden coastline", image_url: "http://www.ushpa.aero/media/photos/hg_2008_09_hires.jpg", scope:"In the next five years", category: "Adreneline/Sports")
-
 Chapter.create(title: "Go to a Yankees game", description: "Cheer on the Yanks in the big apple", image_url: "http://nihilobstat.info/wp-content/uploads/2008/09/yankee-stadium.jpeg", scope:"Within my lifetime", category: "Adreneline/Sports")
-
 Chapter.create(title: "Attend the Summer Olympics", description: "Watch the team USA!!!", image_url: "http://img2-2.timeinc.net/ew/i/2012/08/02/michael-phelps-091900.jpg", scope:"Within my lifetime", category: "Adreneline/Sports")
-
 Chapter.create(title: "Learn how to play vollyball", description: "Spike a ball for once in my life", image_url: "http://latimesblogs.latimes.com/photos/uncategorized/2008/08/16/kerri.jpg", scope:"Within a year", category: "Adreneline/Sports")
 
 Chapter.create(title: "Get married", description: "Marry the person of my dreams", image_url: "http://www.clichemag.com/wp-content/uploads/2014/07/wedding-venues.jpg", scope:"Within my lifetime", category: "Milestones")
-
 Chapter.create(title: "Have a baby", description: "Extend the family", image_url: "http://cdn.sheknows.com/articles/2012/02/Sarah_Parenting/baby-names-baby-in-towel2.jpg", scope:"Within my lifetime", category: "Milestones")
-
 Chapter.create(title: "Own a house", description: "Have a place to call home", image_url: "http://www.regardinghomes.com/wp-content/uploads/2014/06/House-elegant-design-beautiful-house-interior-and-exterior-design.jpg", scope:"In the next five years", category: "Milestones")
-
 Chapter.create(title: "Adopt a pet", description: "Give a home to a loving pet", image_url: "http://www.adsparrot.com/files/images/649-big-1-1376655309.jpg", scope:"Within a year", category: "Milestones")
-
 Chapter.create(title: "Move out of my parent's house", description: "I've got to get out of this place!", image_url: "http://www.rantlifestyle.com/wp-content/uploads/2014/01/leaving-home.jpg", scope:"Within a year", category: "Milestones")
 
 Chapter.create(title: "Learn to Make Vegan Tacos", description: "I need to eat healthier.", image_url: "http://ohmyveggies.com/wp-content/uploads/2013/02/tempeh_tacos_recipe.jpg", scope: "Within a year", category: "food")

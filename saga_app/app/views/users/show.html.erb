@@ -48,7 +48,7 @@
   <% @chapters.each do |chapter| %>
     <% if chapter.saga_id == saga.id %>
     <ul>
-    <li><%= chapter.title %></li>
+    <li><%=link_to(chapter.title, chapter_path(chapter.id)) %></li>
     </ul>
     <% end %>
   <% end %>
