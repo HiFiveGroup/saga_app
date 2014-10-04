@@ -10,7 +10,9 @@ module ChaptersHelper
     chapter = Chapter.find(chapter_id)
     chapter.tag_list.add(tag_string, parse: true)
     chapter.save
+    chapter.reload
   end
+
 
 end
 
