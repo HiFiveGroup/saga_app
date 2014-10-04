@@ -10,8 +10,8 @@ class SagasController < ApplicationController
   # GET /sagas/1
   # GET /sagas/1.json
   def show
-    @chapter = Chapter.new
     @saga = Saga.find(params[:id])
+    @chapters = Chapter.where("saga_id = ?", params[:id])
   end
 
   # GET /sagas/new
