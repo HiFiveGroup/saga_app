@@ -1,7 +1,7 @@
 module ChaptersHelper
 
-  def chapters_by_category
-
+  def chapters_by_category(category)
+    category_chapters = Chapters.find_by(:category => category)
   end
 
   def add_tag(chapter_id, tag_string)
