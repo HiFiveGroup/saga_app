@@ -41,7 +41,7 @@ Chapter.create(title: "Have a baby", description: "Extend the family", image_url
 
 Chapter.create(title: "Own a house", description: "Have a place to call home", image_url: "http://www.regardinghomes.com/wp-content/uploads/2014/06/House-elegant-design-beautiful-house-interior-and-exterior-design.jpg", scope:"In the next five years", category: "Milestones")
 
-Chapter.create(title: "Adopt a pet", description: "Give a home to a loving pet", image_url: "http://onebigphoto.com/uploads/2012/09/flower-petal-and-the-puppy.jpg", scope:"Within a year", category: "Milestones")
+Chapter.create(title: "Adopt a pet", description: "Give a home to a loving pet", image_url: "http://www.adsparrot.com/files/images/649-big-1-1376655309.jpg", scope:"Within a year", category: "Milestones")
 
 Chapter.create(title: "Move out of my parent's house", description: "I've got to get out of this place!", image_url: "http://www.rantlifestyle.com/wp-content/uploads/2014/01/leaving-home.jpg", scope:"Within a year", category: "Milestones")
 
@@ -55,7 +55,7 @@ Chapter.create(title: "Boat Prep, Shove Off and Dry Tortugas!", description: "Th
 Chapter.create(title: "Into the wild", description: "Spend a week in a cabin in the middle of no where in Canada.", image_url: "http://cache.desktopnexus.com/thumbnails/1651545-bigthumbnail.jpg", scope: "In the next 5 years", category: "Travel")
 Chapter.create(title: "Lost Cities of the Incas", description: "Hiking trip to Machu Picchu", image_url: "http://adventureblog.nationalgeographic.com/files/2012/06/machu-picchu-hike.jpg", scope: "In the next 5 years", category: "Travel")
 Chapter.create(title: "Bali Bali", description: "Travel to Bali and discover Indonesia's beautiful island escape.", image_url: "http://www.maitravelsite.com/Blog_Travelogue/wp-content/uploads/2013/10/bali-and-lombok.jpg", scope: "In the next 5 years", category: "Travel")
-Chapter.create(title: "Santorini", description: "WILL GO THERE WITH THE ONE I LOVE.", image_url: "http://cache.graphicslib.viator.com/graphicslib/thumbs674x446/2462/SITours/santorini-island-day-trip...", scope: "In my lifetime", category: "Travel")
+Chapter.create(title: "Santorini", description: "WILL GO THERE WITH THE ONE I LOVE.", image_url: "http://cache.graphicslib.viator.com/graphicslib/thumbs674x446/2462/SITours/santorini-island-day-trip-in-heraklion-141676.jpg", scope: "In my lifetime", category: "Travel")
 
 Chapter.create(title: "Find a DECENT guy, DO him, then DUMP him!", description: "Men are jerks", image_url: "http://i.imgur.com/UsEgSMH.png", scope: "Within a year", category: "Romance")
 Chapter.create(title: "Write love letters to him/her once a month", description: "Love notes", image_url: "http://career-city.com/resumeimages/love-letter-2.gif", scope: "In the next 5 years", category: "Romance")
@@ -64,14 +64,14 @@ Chapter.create(title: "Watch the sunrise and sunset with someone special in Cape
 Chapter.create(title: "Enjoy a candle lit dinner with someone special", description: "Cook for him/her while being naked", image_url: "http://2.bp.blogspot.com/-hvnUGyWd0NY/TjbJFNWQ8tI/AAAAAAAAG8w/guebDNe-h8U/s640/candle+light+dinner+3...", scope: "Within a year", category: "Romance")
 
 Chapter.create(title: "Get Best Friend in Trouble with His Girlfriend", description: "Steal his phone and text his girlfriend that he wants to breakup and that he has been having affair with her mother.", image_url: "http://www.quickmeme.com/img/37/371a4f6d026efa4144f40db4e71a3550e62b5ac4ef6d70b36f9b10f6020c2af5.jpg", scope: "In the next 5 years", category: "other")
-Chapter.create(title: "Train dog to do my homework", description: "Because I'm lazy.", image_url: "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10168185_704790682898068_1618668730_...", scope: "Within a year", category: "other")
-Chapter.create(title: "Hack into Bill Gates Main Bank Account", description: "Because I'm broke.", image_url: "http://www.wheelchairmommy.com/wp-content/uploads/2012/03/big_ballin_money_shot_044365-e133277629512...", scope: "Within my lifetime", category: "other")
-Chapter.create(title: "Take Over the Entire Planet", description: "World Domination Baby!!!.", image_url: "http://uboachan.net/ot/src/1369863863544.jpg", scope: "Within a year", category: "other")
+Chapter.create(title: "Train dog to do my homework", description: "Because I'm lazy.", image_url: "http://4.bp.blogspot.com/-muPSrROrVHg/Uhj3Xl-SRtI/AAAAAAAAHAI/deXO4s-0x_E/s400/IMG_1863a.jpg", scope: "Within a year", category: "other")
+Chapter.create(title: "Hack into Bill Gates Main Bank Account", description: "Because I'm broke.", image_url: "http://www.beliefnet.com/columnists/bemore/files/2013/11/bigstock-Hacker-Typing-On-A-Laptop-44548564.jpg", scope: "Within my lifetime", category: "other")
+Chapter.create(title: "Take Over the Entire Planet", description: "World Domination Baby!!!.", image_url: "http://www.simplyvat.com/wp-content/uploads/2013/12/World-Domination-Summit.jpg", scope: "Within a year", category: "other")
 Chapter.create(title: "Riding a Horse Naked", description: "That'd probably hurt my balls.", image_url: "http://www.horsebreedsinfo.com/images/brown_horse_running.jpg", scope: "Within a year", category: "other")
 
 Chapter.create(title: "Learn French", description: "Do you love the language of love? Time to stop putting it off.", image_url: "http://nairalandnews.com/wp-content/uploads/2014/05/58.jpg", scope: "within one year", tags: "french, language", category: "education", saga_id: nil)
 Chapter.create(title: "Get a Master's degree", description: "There's no better excuse to order new business cards than some new fancy letters at the end of your name.", image_url: "http://cache-blog.credit.com/wp-content/uploads/2013/08/masters-degree.jpg", scope: "within five years", tags: "masters, degree", category: "education", saga_id: nil)
-Chapter.create(title: "Finish college", description: "http://images.sodahead.com/polls/003724235/5744687014_college_130c_xlarge.png", scope: "within five years", tags: "degree", category: "education", saga_id: nil)
+Chapter.create(title: "Finish college", description: "Something I have to do", image_url: "http://blog.cashcrate.com/wp-content/uploads/2013/09/College-Graduate.jpg", scope: "within five years", tags: "degree", category: "education", saga_id: nil)
 Chapter.create(title: "Host an exchange student", description: "When you host a foreign exchange student, your entire family will discover a world of fun and enlightening adventure.", image_url: "http://www.pensacolahomeschool.org/home/wp-content/uploads/2011/08/hp-host-family.jpg", scope: "In the next 5 years", tags: "student", category: "education", saga_id: nil)
 
 
