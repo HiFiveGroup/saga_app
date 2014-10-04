@@ -1,14 +1,7 @@
-<h1> PROFILE </h1>
-<%= link_to 'Logout', session_path, method: :delete %>
-
-<p id="notice"><%= notice %></p>
-
-<%= link_to("Get Some Ideas", chapters_path) %>
-
-<div class="profile_info">
-  <p>
-    <img src="<%= @user.image_url %>">
-  </p>
+<section class="main">
+  <h1> PROFILE PAGE </h1>
+  <%= link_to("Create New Saga", new_saga_path) %>
+  <p id="notice"><%= notice %></p>
 
   <p>
     <strong>Name:</strong>
@@ -26,10 +19,14 @@
   </p>
 
   <p>
+    <strong>Image url:</strong>
+    <%= @user.image_url %>
+  </p>
+
+  <p>
     <strong>Gender:</strong>
     <%= @user.gender %>
   </p>
->>>>>>> 025da112ab4c0fdc2c9a926aa9b9ba5133e2580c
 
   <p>
     <strong>City:</strong>
@@ -45,16 +42,10 @@
     <strong>Country:</strong>
     <%= @user.country %>
   </p>
-<%= link_to 'Edit Profile', edit_user_path(@user) %>
-<%= link_to 'Delete Profile', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
-</div>
-
-<div class="sagas">
 
   <h1>Sagas</h1>
-  <%= link_to("Create New Saga", new_saga_path) %>
   <h1> <% @sagas.each do |saga| %> </h1> </br>
-    <h2><%= link_to(saga.title, saga_path(saga.id)) %></h2>
+    <%= link_to(saga.title, saga_path(saga.id)) %>
     <% @chapters.each do |chapter| %>
       <% if chapter.saga_id == saga.id %>
       <ul>
@@ -63,7 +54,10 @@
       <% end %>
     <% end %>
   <% end %>
-</div>
 
+  <%= link_to 'Edit', edit_user_path(@user) %>
+  <%= link_to 'Destroy', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
 
+  <%= link_to 'Logout', session_path, method: :delete %>
 
+</section>
