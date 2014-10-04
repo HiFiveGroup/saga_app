@@ -1,61 +1,63 @@
-<h1> PROFILE PAGE </h1>
-<%= link_to("Create New Saga", new_saga_path) %>
-<p id="notice"><%= notice %></p>
+<section class="main">
+  <h1> PROFILE PAGE </h1>
+  <%= link_to("Create New Saga", new_saga_path) %>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
 
-<p>
-  <strong>About me:</strong>
-  <%= @user.about_me %>
-</p>
+  <p>
+    <strong>About me:</strong>
+    <%= @user.about_me %>
+  </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @user.image_url %>
-</p>
+  <p>
+    <strong>Image url:</strong>
+    <%= @user.image_url %>
+  </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
+  <p>
+    <strong>Gender:</strong>
+    <%= @user.gender %>
+  </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
+  <p>
+    <strong>City:</strong>
+    <%= @user.city %>
+  </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @user.state %>
-</p>
+  <p>
+    <strong>State:</strong>
+    <%= @user.state %>
+  </p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @user.country %>
-</p>
+  <p>
+    <strong>Country:</strong>
+    <%= @user.country %>
+  </p>
 
-<h1>Sagas</h1>
-<h1> <% @sagas.each do |saga| %> </h1> </br>
-  <h2><%= link_to(saga.title, saga_path(saga.id)) %></h2>
-  <% @chapters.each do |chapter| %>
-    <% if chapter.saga_id == saga.id %>
-    <ul>
-    <li><%= chapter.title %></li>
-    </ul>
+  <h1>Sagas</h1>
+  <h1> <% @sagas.each do |saga| %> </h1> </br>
+    <%= link_to(saga.title, saga_path(saga.id)) %>
+    <% @chapters.each do |chapter| %>
+      <% if chapter.saga_id == saga.id %>
+      <ul>
+      <li><%= chapter.title %></li>
+      </ul>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %>
-<%= link_to 'Destroy', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
+  <%= link_to 'Destroy', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
 
-<%= link_to 'Logout', session_path, method: :delete %>
+  <%= link_to 'Logout', session_path, method: :delete %>
 
+</section>
