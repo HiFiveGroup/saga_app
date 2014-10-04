@@ -14,6 +14,7 @@ class ChaptersController < ApplicationController
 
   # GET /chapters/new
   def new
+    @saga_id = params[:saga_id]
     @chapter = Chapter.new
   end
 
@@ -25,6 +26,9 @@ class ChaptersController < ApplicationController
   # POST /chapters.json
   def create
     @chapter = Chapter.create(chapter_params)
+
+     redirect_to @chapter
+
   end
 
   # PATCH/PUT /chapters/1

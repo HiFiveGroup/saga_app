@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @sagas = Saga.where("user_id = ?", session[:user_id])
+    @chapters = Chapter.all
   end
 
   # GET /users/new
