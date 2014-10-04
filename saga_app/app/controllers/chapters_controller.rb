@@ -27,7 +27,7 @@ class ChaptersController < ApplicationController
   def create
     @chapter = Chapter.create(chapter_params)
 
-     redirect_to @chapter
+     redirect_to user_path(session[:user_id])
 
   end
 

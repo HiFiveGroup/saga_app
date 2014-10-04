@@ -47,7 +47,9 @@
   <h2><%= link_to(saga.title, saga_path(saga.id)) %></h2>
   <% @chapters.each do |chapter| %>
     <% if chapter.saga_id == saga.id %>
-    <%= chapter.title %>
+    <ul>
+    <li><%= chapter.title %></li>
+    </ul>
     <% end %>
   <% end %>
 <% end %>
