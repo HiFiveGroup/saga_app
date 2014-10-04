@@ -33,12 +33,8 @@
   </div>
   <div class="field">
     <%= f.label :category %><br>
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :saga_id %><br>
-    <%= f.text_field :saga_id %>
-  </div>
+    <%= f.select(:category, [["Adreneline/Sport"], ["Milestones"], ["Travel"], ["Romance"], ["Food"], ["Education"], ["Culture"], ["Other"]]) %>
+  </div><br>%>
   <div class="actions">
     <%= f.submit %>
   </div>

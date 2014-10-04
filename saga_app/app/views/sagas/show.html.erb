@@ -4,6 +4,6 @@
   <strong>Title:</strong>
   <%= @saga.title %>
 </p>
-
+<%= link_to 'Add a Chapter', new_saga_chapter_path(@saga) %>
 <%= link_to 'Edit', edit_saga_path(@saga) %> |
 <%= link_to 'Back', user_path(session[:user_id]) %>
