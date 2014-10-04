@@ -14,6 +14,7 @@ class ChaptersController < ApplicationController
 
   # GET /chapters/new
   def new
+    @saga_id = params[:saga_id]
     @chapter = Chapter.new
   end
 
@@ -24,17 +25,17 @@ class ChaptersController < ApplicationController
   # POST /chapters
   # POST /chapters.json
   def create
-    @chapter = Chapter.new(chapter_params)
-
-    respond_to do |format|
-      if @chapter.save
-        format.html { redirect_to @chapter, notice: 'Chapter was successfully created.' }
-        format.json { render :show, status: :created, location: @chapter }
-      else
-        format.html { render :new }
-        format.json { render json: @chapter.errors, status: :unprocessable_entity }
-      end
-    end
+    @chapter = Chapter.create(chapter_params)
+    redirect_to @chapter
+    # respond_to do |format|
+    #   if @chapter.save
+    #     format.html { redirect_to @chapter, notice: 'Chapter was successfully created.' }
+    #     format.json { render :show, status: :created, location: @chapter }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @chapter.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /chapters/1
