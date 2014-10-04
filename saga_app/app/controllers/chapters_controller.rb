@@ -26,16 +26,9 @@ class ChaptersController < ApplicationController
   # POST /chapters.json
   def create
     @chapter = Chapter.create(chapter_params)
-    redirect_to @chapter
-    # respond_to do |format|
-    #   if @chapter.save
-    #     format.html { redirect_to @chapter, notice: 'Chapter was successfully created.' }
-    #     format.json { render :show, status: :created, location: @chapter }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @chapter.errors, status: :unprocessable_entity }
-    #   end
-    # end
+
+     redirect_to @chapter
+
   end
 
   # PATCH/PUT /chapters/1

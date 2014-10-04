@@ -58,7 +58,7 @@ Chapter.create(title: "Bali Bali", description: "Travel to Bali and discover Ind
 Chapter.create(title: "Santorini", description: "WILL GO THERE WITH THE ONE I LOVE.", image_url: "http://cache.graphicslib.viator.com/graphicslib/thumbs674x446/2462/SITours/santorini-island-day-trip...", scope: "In my lifetime", category: "Travel")
 
 Chapter.create(title: "Find a DECENT guy, DO him, then DUMP him!", description: "Men are jerks", image_url: "http://i.imgur.com/UsEgSMH.png", scope: "Within a year", category: "Romance")
-Chapter.create(title: "rite love letters to him once a month", description: "Love notes", image_url: "http://career-city.com/resumeimages/love-letter-2.gif", scope: "In the next 5 years", category: "Romance")
+Chapter.create(title: "Write love letters to him/her once a month", description: "Love notes", image_url: "http://career-city.com/resumeimages/love-letter-2.gif", scope: "In the next 5 years", category: "Romance")
 Chapter.create(title: "Dance in the rain", description: "Kiss him/her, then tell him you love him/her", image_url: "http://24.media.tumblr.com/tumblr_md87e4SO3y1rkae0qo1_400.gif", scope: "In my lifetime", category: "Romance")
 Chapter.create(title: "Watch the sunrise and sunset with someone special in Cape Town", description: "sunrise and sunset", image_url: "http://3.bp.blogspot.com/-P6DW7Uozh-0/UC5hw4lVsAI/AAAAAAAAGNQ/TWaTQ2UOdzE/s1600/romantic_couple_suns...", scope: "In the next 5 years", category: "Romance")
 Chapter.create(title: "Enjoy a candle lit dinner with someone special", description: "Cook for him/her while being naked", image_url: "http://2.bp.blogspot.com/-hvnUGyWd0NY/TjbJFNWQ8tI/AAAAAAAAG8w/guebDNe-h8U/s640/candle+light+dinner+3...", scope: "Within a year", category: "Romance")
