@@ -8,7 +8,7 @@ module ChaptersHelper
     # this method can add either one tag at a time
     # or multiple tags as a string divided by commas
     chapter = Chapter.find(chapter_id)
-    chapter.tag_list.add(tag_string)
+    chapter.tag_list.add(tag_string, parse: true)
     chapter.save
   end
 
