@@ -1,7 +1,7 @@
 module ChaptersHelper
 
-  def chapters_by_category(category)
-    category_chapters = Chapters.find_by(:category => category)
+  def self.chapters_by_category(category)
+    category_chapters = Chapter.where(category: category)
   end
 
   def add_tag(chapter_id, tag_string)
