@@ -1,12 +1,17 @@
-<div class="idea_list">
-<h1>What Other Adventurers Are Doing</h1>
-<% @chapters.each do |chapter| %>
-<div class="chapter_ideas">
- <p class="chapter_title"> <%= chapter.title %></p>
-    <div class="thumb">
-  <img src="<%= chapter.image_url %>">
-</div>
-</div>
-
-<% end %>
-</div>
+<section class="main">
+	<h1>What Other Adventurers Are Doing</h1>
+	<tbody>
+		<% @chapters.sample(10).each do |chapter| %>
+		<tr>
+			 <td>
+			 	<%= link_to(chapter.title, chapter_path(chapter.id))  %>
+			 </td>
+			 <br>
+			 <td>
+			 	<img src="<%= chapter.image_url %>">
+			 </td>
+			 <br>
+		</tr>
+		<% end %>
+	</tbody>
+</section>
