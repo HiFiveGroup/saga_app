@@ -1,36 +1,23 @@
 <section class="main">
   <h1> PROFILE </h1>
   <%= link_to("Create New Saga", new_saga_path) %>
-  <%= link_to 'Logout', session_path, method: :delete %>
+<p id="notice"><%= notice %></p>
 
-  <p id="notice"><%= notice %></p>
+<%= link_to("Get Some Ideas", chapters_path) %><br/>
 
-  <%= link_to("Get Some Ideas", chapters_path) %>
-
-  <div class="profile_info">
-    <p>
-      <img src="<%= @user.image_url %>">
-    </p>
+<div class="profile_info">
+  <p>
+    <img src="<%= @user.image_url %>">
+  </p>
     <p>
       <strong>Name:</strong>
       <%= @user.name %>
     </p>
-
-    <p>
-      <strong>Email:</strong>
-      <%= @user.email %>
-    </p>
-
     <p>
       <strong>About me:</strong>
       <%= @user.about_me %>
     </p>
 
-    <p>
-    <p>
-      <strong>Gender:</strong>
-      <%= @user.gender %>
-    </p>
     <p>
       <strong>City:</strong>
       <%= @user.city %>
