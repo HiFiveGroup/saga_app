@@ -4,7 +4,10 @@ class ChaptersController < ApplicationController
   # GET /chapters
   # GET /chapters.json
   def index
-    @chapters = Chapter.all
+     user = User.find(session[:user_id])
+     @chapters = Chapter.all
+     @sagas = Saga.where("user_id = ?", user.id)
+     @chapter = Chapter.new
   end
 
   # GET /chapters/1
@@ -14,6 +17,9 @@ class ChaptersController < ApplicationController
 
   # GET /chapters/new
   def new
+    user = User.find(session[:user_id])
+    sagas = Saga.where("user_id = ?", user.id)
+    @sagas = sagas.select { |saga| saga.title }
     @saga_id = params[:saga_id]
     @chapter = Chapter.new
   end
@@ -25,7 +31,12 @@ class ChaptersController < ApplicationController
   # POST /chapters
   # POST /chapters.json
   def create
-    Chapter.create(chapter_params)
+
+    saga = Saga.find_by(title: params[:saga])
+    saga_id = saga.id
+    chapter = Chapter.create(chapter_params)
+    chapter.saga_id = saga_id
+    chapter.save
 
 
     # @chapter = Chapter.create(title: params[:chapter][:title], user_id: session[:user_id])
