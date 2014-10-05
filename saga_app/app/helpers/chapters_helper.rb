@@ -33,6 +33,10 @@ module ChaptersHelper
     ActsAsTaggableOn::Tag.most_used
   end
 
+  def self.find_by_user(user_id)
+    Chapter.where(:saga_id => Saga.where(:user_id => user_id))
+  end
+
 end
 
 # require './app/helpers/chapters_helper'
