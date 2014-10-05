@@ -25,7 +25,23 @@ class ChaptersController < ApplicationController
   # POST /chapters
   # POST /chapters.json
   def create
-    @chapter = Chapter.create(chapter_params)
+    Chapter.create(chapter_params)
+
+
+    # @chapter = Chapter.create(title: params[:chapter][:title], user_id: session[:user_id])
+    # redirect_to(user_path(session[:user_id]))
+
+    # @chapter = Chapter.create(chapter_params)
+
+    # respond_to do |format|
+    #   if @chapter.save
+    #     format.html { redirect_to @chapter, notice: 'Chapter was successfully created.' }
+    #     format.json { render :show, status: :created, location: @chapter }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @chapter.errors, status: :unprocessable_entity }
+    #   end
+    # end
 
      redirect_to user_path(session[:user_id])
 
