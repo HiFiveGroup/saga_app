@@ -4,7 +4,10 @@ class ChaptersController < ApplicationController
   # GET /chapters
   # GET /chapters.json
   def index
-    @chapters = Chapter.all
+     user = User.find(session[:user_id])
+     @chapters = Chapter.where(saga_id: nil)
+     @sagas = Saga.where("user_id = ?", user.id)
+     @chapter = Chapter.new
   end
 
   # GET /chapters/1
@@ -14,6 +17,9 @@ class ChaptersController < ApplicationController
 
   # GET /chapters/new
   def new
+    user = User.find(session[:user_id])
+    sagas = Saga.where("user_id = ?", user.id)
+    @sagas = sagas.select { |saga| saga.title }
     @saga_id = params[:saga_id]
     @chapter = Chapter.new
   end
@@ -25,50 +31,28 @@ class ChaptersController < ApplicationController
   # POST /chapters
   # POST /chapters.json
   def create
-    Chapter.create(chapter_params)
-
-
-    # @chapter = Chapter.create(title: params[:chapter][:title], user_id: session[:user_id])
-    # redirect_to(user_path(session[:user_id]))
-
-    # @chapter = Chapter.create(chapter_params)
-
-    # respond_to do |format|
-    #   if @chapter.save
-    #     format.html { redirect_to @chapter, notice: 'Chapter was successfully created.' }
-    #     format.json { render :show, status: :created, location: @chapter }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @chapter.errors, status: :unprocessable_entity }
-    #   end
-    # end
-
-     redirect_to user_path(session[:user_id])
-
+      if params[:chapter][:secret]
+       chapter = Chapter.create(chapter_params)
+      else
+      saga = Saga.find_by(title: params[:saga])
+      saga_id = saga.id
+      chapter = Chapter.create(chapter_params)
+      chapter.saga_id = saga_id
+      chapter.save
+    end
+    redirect_to user_path(session[:user_id])
   end
 
   # PATCH/PUT /chapters/1
   # PATCH/PUT /chapters/1.json
   def update
-    respond_to do |format|
-      if @chapter.update(chapter_params)
-        format.html { redirect_to @chapter, notice: 'Chapter was successfully updated.' }
-        format.json { render :show, status: :ok, location: @chapter }
-      else
-        format.html { render :edit }
-        format.json { render json: @chapter.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # DELETE /chapters/1
   # DELETE /chapters/1.json
   def destroy
     @chapter.destroy
-    respond_to do |format|
-      format.html { redirect_to chapters_url, notice: 'Chapter was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to user_path(session[:user_id])
   end
 
   private
