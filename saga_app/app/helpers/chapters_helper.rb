@@ -12,7 +12,6 @@ module ChaptersHelper
     chapter = Chapter.find(chapter_id)
     chapter.tag_list.add(tag_string.downcase, parse: true)
     chapter.save
-    chapter.reload
   end
 
   def remove_tag_from_chapter(chapter_id, tag_string)
@@ -20,10 +19,9 @@ module ChaptersHelper
     chapter = Chapter.find(chapter_id)
     chapter.tag_list.remove(tag_string.downcase)
     chapter.save
-    chapter.reload
   end
 
-  def self.chapters_with_tag(tag_string)
+  def self.chapters_by_tag(tag_string)
     # this returns a list of all chapters containing the chosen tag or tags
     Chapter.tagged_with([tag_string])
   end
