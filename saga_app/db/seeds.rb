@@ -69,10 +69,10 @@ Chapter.create(title: "Hack into Bill Gates Main Bank Account", description: "Be
 Chapter.create(title: "Take Over the Entire Planet", description: "World Domination Baby!!!.", image_url: "http://uboachan.net/ot/src/1369863863544.jpg", scope: "Within a year", category: "other")
 Chapter.create(title: "Riding a Horse Naked", description: "That'd probably hurt my balls.", image_url: "http://www.horsebreedsinfo.com/images/brown_horse_running.jpg", scope: "Within a year", category: "other")
 
-Chapter.create(title: "Learn French", description: "Do you love the language of love? Time to stop putting it off.", image_url: "http://nairalandnews.com/wp-content/uploads/2014/05/58.jpg", scope: "within one year", tags: "french, language", category: "education", saga_id: nil)
-Chapter.create(title: "Get a Master's degree", description: "There's no better excuse to order new business cards than some new fancy letters at the end of your name.", image_url: "http://cache-blog.credit.com/wp-content/uploads/2013/08/masters-degree.jpg", scope: "within five years", tags: "masters, degree", category: "education", saga_id: nil)
-Chapter.create(title: "Finish college", description: "http://images.sodahead.com/polls/003724235/5744687014_college_130c_xlarge.png", scope: "within five years", tags: "degree", category: "education", saga_id: nil)
-Chapter.create(title: "Host an exchange student", description: "When you host a foreign exchange student, your entire family will discover a world of fun and enlightening adventure.", image_url: "http://www.pensacolahomeschool.org/home/wp-content/uploads/2011/08/hp-host-family.jpg", scope: "In the next 5 years", tags: "student", category: "education", saga_id: nil)
+Chapter.create(title: "Learn French", description: "Do you love the language of love? Time to stop putting it off.", image_url: "http://nairalandnews.com/wp-content/uploads/2014/05/58.jpg", scope: "within one year", category: "education", saga_id: nil)
+Chapter.create(title: "Get a Master's degree", description: "There's no better excuse to order new business cards than some new fancy letters at the end of your name.", image_url: "http://cache-blog.credit.com/wp-content/uploads/2013/08/masters-degree.jpg", scope: "within five years", category: "education", saga_id: nil)
+Chapter.create(title: "Finish college", description: "http://images.sodahead.com/polls/003724235/5744687014_college_130c_xlarge.png", scope: "within five years", category: "education", saga_id: nil)
+Chapter.create(title: "Host an exchange student", description: "When you host a foreign exchange student, your entire family will discover a world of fun and enlightening adventure.", image_url: "http://www.pensacolahomeschool.org/home/wp-content/uploads/2011/08/hp-host-family.jpg", scope: "In the next 5 years", category: "education", saga_id: nil)
 
 
 
