@@ -1,4 +1,9 @@
+require './app/helpers/chapters_helper'
+
 class ChaptersController < ApplicationController
+
+  include (ChaptersHelper)
+
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
 
   # GET /chapters
@@ -79,6 +84,6 @@ class ChaptersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chapter_params
-      params.require(:chapter).permit(:title, :desciption, :image_url, :scope, :tags, :category, :saga_id)
+      params.require(:chapter).permit(:title, :description, :image_url, :scope, :tags, :category, :saga_id)
     end
 end
