@@ -1,9 +1,8 @@
 <section class="main">
-<div class="idea_list">
 <h1>What Other Adventurers Are Doing</h1>
 <% @chapters.each do |chapter| %>
 <div class="chapter_ideas">
- <p class="chapter_title"> <%= chapter.title %></p>
+ <%= link_to(chapter.title, chapter_path(chapter.id)) %>
     <div class="thumb">
   <img src="<%= chapter.image_url %>">
 </div>
@@ -31,5 +30,4 @@
 <% end %>
 </div>
 <% end %>
-</div>
 </section>
