@@ -12,7 +12,7 @@
   <select name="saga">
     <% @sagas.each do |saga| %>
     <option value="<%= saga.title %>"><%= saga.title %></option>
-    <% saga = Saga.find_by(title: "Today", user_id: session[:user_id]) %>
+    <% saga = Saga.find_by(title: saga.title, user_id: session[:user_id]) %>
     <% @saga_id = saga.id %>
 
     <% end %>
@@ -25,12 +25,9 @@
     <%= f.hidden_field(:category, :value => chapter.category )%>
     <%= f.hidden_field(:saga_id, :value => @saga_id) %>
   <div class="actions">
-    <%= f.submit%>
+    <%= f.submit "Add This Chapter" %>
   </div>
 <% end %>
 </div>
-<%= link_to 'Add this Chapter', new_chapter_path %>
-
-
 <% end %>
 </div>
