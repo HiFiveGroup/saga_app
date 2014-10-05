@@ -1,10 +1,5 @@
 module ChaptersHelper
 
-  def self.find_by_category(category)
-    # this method returns all chapters with category
-    category_chapters = Chapter.where(category: category)
-  end
-
   def add_tag_to_chapter(chapter_id, tag_string)
     # this method adds tags to a chapter
     # either one at a time or multiple tags as a string divided by commas
@@ -28,14 +23,22 @@ module ChaptersHelper
     Chapter.tagged_with([tag_string])
   end
 
+  def self.find_by_user(user_id)
+    Chapter.where(:saga_id => Saga.where(:user_id => user_id))
+  end
+
+  def self.find_by_category(category)
+    # this method returns all chapters with category
+    Chapter.where(category: category)
+  end
+
   def self.all_tags
     # this returns a list of all tags, descending by usage frequency
     ActsAsTaggableOn::Tag.most_used
   end
 
-  def self.find_by_user(user_id)
-    Chapter.where(:saga_id => Saga.where(:user_id => user_id))
-  end
+
+
 
 end
 
