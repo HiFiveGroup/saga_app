@@ -50,7 +50,9 @@
 <div class="sagas">
 
   <h1>Sagas</h1>
+  <% if @user.id == session[:user_id] %>
   <%= link_to("Create New Saga", new_saga_path) %>
+  <% end %>
   <h1> <% @sagas.each do |saga| %> </h1> </br>
     <h2><%= link_to(saga.title, saga_path(saga.id)) %></h2><%= link_to 'Add a Chapter', new_saga_chapter_path(saga.id) %>
     <% @chapters.each do |chapter| %>
