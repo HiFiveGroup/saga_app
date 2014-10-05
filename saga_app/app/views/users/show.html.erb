@@ -1,13 +1,15 @@
 <section class="main">
+  <div class="left">
   <h1> PROFILE </h1>
-  <%= link_to("Create New Saga", new_saga_path) %>
-  <p id="notice"><%= notice %></p>
+   <p id="notice"><%= notice %></p>
 
-<%= link_to("Get Some Ideas", chapters_path) %><br/>
 <div class="profile_info">
   <p>
     <img src="<%= @user.image_url %>">
   </p>
+</div>
+</div>
+<div class="right">
     <p>
       <strong>Name:</strong>
       <%= @user.name %>
@@ -28,10 +30,13 @@
       <strong>Country:</strong>
       <%= @user.country %>
     </p>
-  <div class="sagas">
-
+  </div>
+</section>
+<section class="main">
     <h1>Sagas</h1>
     <%= link_to("Create New Saga", new_saga_path) %>
+    <%= link_to("Get Some Ideas", chapters_path) %><br/>
+
     <% @sagas.each do |saga| %> </br>
     <%= link_to(saga.title, saga_path(saga.id)) %>
     <% @chapters.each do |chapter| %>
@@ -46,5 +51,4 @@
     <%= link_to 'Destroy', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
 
     <%= link_to 'Logout', session_path, method: :delete %>
-  </div>
 </section>

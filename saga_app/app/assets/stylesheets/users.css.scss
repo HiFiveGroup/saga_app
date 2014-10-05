@@ -6,17 +6,13 @@ background: url(blah.jpg) 50% 50% no-repeat; /* 50% 50% centers image in div */
 width: 200px;
 height: 200px;
 }
-.profile_info {
-  text-align: left;
-  float: left;
+.left {
+	float: left;
 }
-
-.sagas {
-  text-align: center;
-  float: center;
-
+.right {
+	float: left;
+	margin: 40px 0 0 55px;
 }
-
 li {
   list-style-type: none;
 }
