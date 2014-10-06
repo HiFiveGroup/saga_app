@@ -2,11 +2,12 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= link_to("Get Some Ideas", chapters_path) %><br/>
+<p><%= link_to("Get Some Ideas", chapters_path) %></p><br/>
+<p><%= link_to("Meet Other Adventurers", users_path) %></p><br/>
 
 <div class="profile_info">
   <p>
-    <img src="<%= @user.image_url %>">
+    <img src="<%= @user.image_url %>" width="200px">
   </p>
 
   <p>
@@ -43,8 +44,10 @@
     <strong>Country:</strong>
     <%= @user.country %>
   </p>
+  <% if @user.id == session[:user_id] %>
 <%= link_to 'Edit Profile', edit_user_path(@user) %>
 <%= link_to 'Delete Profile', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
+<% end %>
 </div>
 
 <div class="sagas">
@@ -58,10 +61,13 @@
     <% @chapters.each do |chapter| %>
       <% if chapter.saga_id == saga.id %>
       <ul>
-      <li><%= link_to(chapter.title, chapter_path(chapter.id)) %></li>
-      </ul>
+      <li><%= link_to(chapter.title, chapter_path(chapter.id)) %>
+         <img src="<%= chapter.image_url %>" width="50px">
+      </li>
+
       <% end %>
     <% end %>
+    </ul>
   <% end %>
 </div>
 

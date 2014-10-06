@@ -15,7 +15,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @sagas = Saga.where("user_id = ?", session[:user_id])
+    user = User.find(params[:id])
+    @sagas = Saga.where("user_id = ?", params[:id])
     @chapters = Chapter.all
   end
 
@@ -113,9 +114,9 @@ class UsersController < ApplicationController
       end
     end
 
-    # def authorize_user_or_admin
-    #   unless current_user == @user || current_user.is_admin?
-    #     redirect_to user_path(current_user)
-    #   end
-    # end
+    def authorize_user_or_admin
+      unless current_user == @user || current_user.is_admin?
+        redirect_to user_path(current_user)
+      end
+    end
 end
