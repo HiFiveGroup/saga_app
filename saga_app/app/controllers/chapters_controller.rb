@@ -26,11 +26,11 @@ class ChaptersController < ApplicationController
 
   # GET /chapters/new
   def new
-    user = User.find(session[:user_id])
-    sagas = Saga.where("user_id = ?", user.id)
-    @sagas = sagas.select { |saga| saga.title }
-    @saga_id = params[:saga_id]
-    @chapter = Chapter.new
+      user = User.find(session[:user_id])
+      sagas = Saga.where("user_id = ?", user.id)
+      @sagas = sagas.select { |saga| saga.title }
+      @saga_id = params[:saga_id]
+      @chapter = Chapter.new
   end
 
   # GET /chapters/1/edit
