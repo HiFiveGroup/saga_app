@@ -35,11 +35,6 @@ module ChaptersHelper
     User.find(Saga.find(Chapter.find(chapter_id).saga_id).user_id)
   end
 
-  def self.find_by_category(category)
-    # returns all chapters with category
-    Chapter.where(category: category)
-  end
-
   def self.all_tags
     # returns a list of the 50 most frequently used tags
     # in descending order
@@ -51,6 +46,20 @@ module ChaptersHelper
     tag_users = tag_chapters.map do |chapter|
       self.find_user_by_chapter(chapter[:id])
     end
+    tag_users.uniq
+  end
+
+  def self.find_tag_by_user(user_id)
+    user_chapters = self.find_chapter_by_user(user_id)
+    user_tags = user_chapters.map do |chapter|
+      chapter.tag_list
+    end
+    user_tags.uniq
+  end
+
+  def self.find_chapter_by_category(category)
+    # returns all chapters with category
+    Chapter.where(category: category)
   end
 
 end
