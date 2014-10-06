@@ -29,6 +29,7 @@ class CommentsController < ApplicationController
     redirect_to(chapter_path(params[:chapter_id]))
   end
 
+
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
   def update

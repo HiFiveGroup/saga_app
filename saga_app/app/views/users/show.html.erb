@@ -1,4 +1,4 @@
- <h1 style="color: red"><%= notice %></h1>
+<h1 style="color: red"><%= notice %></h1>
 <section class="main">
   <div class="left">
 
@@ -48,11 +48,15 @@
     <% @sagas.each do |saga| %> </br>
     <%= link_to(saga.title, saga_path(saga.id)) %>
     <% @chapters.each do |chapter| %>
+
         <% if chapter.saga_id == saga.id %>
         <ul>
         <li><%= link_to(chapter.title, chapter_path(chapter.id)) %></li>
+
         </ul>
         <% end %>
+
       <% end %>
     <% end %>
 </section>
+
