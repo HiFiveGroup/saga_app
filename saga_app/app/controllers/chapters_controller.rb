@@ -13,6 +13,8 @@ class ChaptersController < ApplicationController
   # GET /chapters/1
   # GET /chapters/1.json
   def show
+    chapter = params[:id]
+    @current_user = Saga.find(Chapter.find(chapter).saga_id).user_id
     @user = User.find(session[:user_id])
     @chapter_id = params[:id]
     @comments = Comment.where(user_id: @user.id, chapter_id: @chapter_id)
@@ -40,7 +42,7 @@ class ChaptersController < ApplicationController
         params[:saga] == nil
         flash[:notice] = "You Don't have any Sagas. Create one Now!!!"
       else
-      saga = Saga.find_by(title: params[:saga])
+      saga = Saga.find_by(title: params[:saga], user_id: session[:user_id])
       saga_id = saga.id
       chapter = Chapter.create(chapter_params)
       chapter.saga_id = saga_id

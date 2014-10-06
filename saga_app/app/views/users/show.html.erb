@@ -1,11 +1,10 @@
+ <h1 style="color: red"><%= notice %></h1>
 <section class="main">
   <div class="left">
-  <h1> PROFILE </h1>
-   <p id="notice"><%= notice %></p>
 
   <div class="profile_info">
     <p>
-      <img src="<%= @user.image_url %>">
+      <img src="<%= @user.image_url %>" width="100px">
     </p>
   </div>
   </div>
@@ -21,26 +20,20 @@
     <p>
       <strong>City:</strong>
       <%= @user.city %>
-    <p>
-      <strong>State:</strong>
-      <%= @user.state %>
-    </p>
 
-    <p>
-      <strong>Country:</strong>
-      <%= @user.country %>
-    </p>
   </div>
   <%= link_to("Meet Other Adventurers", users_path) %><br/>
-
+  <% if @user.id == session[:user_id] %>
   <%= link_to 'Edit Profile', edit_user_path(@user) %>
   <%= link_to 'Delete Profile', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
- 
+  <% end %>
 </section>
 <section class="main">
     <h1>Sagas</h1>
+    <% if @user.id == session[:user_id] %>
     <%= link_to("Create New Saga", new_saga_path) %>
     <%= link_to("Get Some Ideas", chapters_path) %><br/>
+    <% end %>
 
     <% @sagas.each do |saga| %> </br>
     <%= link_to(saga.title, saga_path(saga.id)) %>
@@ -52,8 +45,4 @@
         <% end %>
       <% end %>
     <% end %>
-    <%= link_to 'Edit', edit_user_path(@user) %>
-    <%= link_to 'Destroy', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
-  <h1 style="color: red"><%= notice %></h1>
-    <%= link_to 'Logout', session_path, method: :delete %>
 </section>
