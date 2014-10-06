@@ -24,13 +24,15 @@
         <li class="signup"><%= link_to 'Sign Up', new_user_path %></li>
       <% end %>
 		</ul>
-	</nav>
-	<div class="wrapper">
-		
-	<%= yield %>
-	
-	</div>
-		
+  </nav>
+  <div class="wrapper">
+
+  <%= yield %>
+
+  </div>
+
+
+
 	<% if current_page?(controller: 'welcome', action: 'index')
  %>
 		<footer class="relative">

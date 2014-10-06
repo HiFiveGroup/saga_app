@@ -15,7 +15,7 @@
 	  			<tr>
 	  				<td>
 	  					<%= link_to(chapter.title, chapter_path(chapter.id)) %>
-	  				</td> 
+	  				</td>
 	  				<td>
                         <%= chapter.scope %>
 	  				</td>
@@ -30,3 +30,4 @@
 	<%= link_to 'Destroy', saga_path(@saga.id), method: :delete, data: { confirm: 'Are you sure?' } %> |
 	<%= link_to 'Back', user_path(session[:user_id]) %>
 </section>
+
