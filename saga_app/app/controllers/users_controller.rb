@@ -2,14 +2,14 @@ class UsersController < ApplicationController
   # before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate,            except: [:new, :create]
   before_action :load_user,               except: [:index, :new, :create]
-  before_action :authorize_admin_only,    only:   :index
-  before_action :authorize_user_only,     only:   :show
+  # before_action :authorize_admin_only,    only:   :index
+  # before_action :authorize_user_only,     only:   :show
   before_action :authorize_user_or_admin, except: [:index, :show, :new, :create]
 
   # GET /users
   # GET /users.json
   def index
-    # @users = User.all.sort.reverse.reject {|user| user == current_user}
+    @users = User.all
   end
 
   # GET /users/1
@@ -113,9 +113,9 @@ class UsersController < ApplicationController
       end
     end
 
-    def authorize_user_or_admin
-      unless current_user == @user || current_user.is_admin?
-        redirect_to user_path(current_user)
-      end
-    end
+    # def authorize_user_or_admin
+    #   unless current_user == @user || current_user.is_admin?
+    #     redirect_to user_path(current_user)
+    #   end
+    # end
 end

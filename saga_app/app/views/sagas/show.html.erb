@@ -25,8 +25,8 @@
 	  </ul>
 	  <% end %>
 	</p>
-
-	<%= link_to 'Add a Chapter', new_saga_chapter_path(@saga) %>
+	<%= link_to 'Add a Chapter', new_saga_chapter_path(@saga) %> |
 	<%= link_to 'Edit', edit_saga_path(@saga) %> |
+	<%= link_to 'Destroy', saga_path(@saga.id), method: :delete, data: { confirm: 'Are you sure?' } %> |
 	<%= link_to 'Back', user_path(session[:user_id]) %>
 </section>

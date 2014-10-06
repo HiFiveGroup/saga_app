@@ -5,7 +5,7 @@ class ChaptersController < ApplicationController
   # GET /chapters.json
   def index
      user = User.find(session[:user_id])
-     @chapters = Chapter.all
+     @chapters = Chapter.where(saga_id: nil)
      @sagas = Saga.where("user_id = ?", user.id)
      @chapter = Chapter.new
   end
@@ -46,25 +46,13 @@ class ChaptersController < ApplicationController
   # PATCH/PUT /chapters/1
   # PATCH/PUT /chapters/1.json
   def update
-    respond_to do |format|
-      if @chapter.update(chapter_params)
-        format.html { redirect_to @chapter, notice: 'Chapter was successfully updated.' }
-        format.json { render :show, status: :ok, location: @chapter }
-      else
-        format.html { render :edit }
-        format.json { render json: @chapter.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # DELETE /chapters/1
   # DELETE /chapters/1.json
   def destroy
     @chapter.destroy
-    respond_to do |format|
-      format.html { redirect_to chapters_url, notice: 'Chapter was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to user_path(session[:user_id])
   end
 
   private
