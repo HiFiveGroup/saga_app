@@ -30,18 +30,26 @@
     <strong>Category:</strong>
     <%= @chapter.category %>
   </p>
-  <span class="comments">
-    <label for="comments"> User Comments</label>
-    <% @comments.each do |comment| %>
-      <h1><%= comment.title %></h1>
-      <h2><%= comment.body %></h2>
-    <% end %>
-  </span>
 
-  <%= link_to 'Add a Comment', new_chapter_comment_path(@chapter.id) %>
+<div class="comments">
+  <label for="chapter-comments"> User Comments</label></br>
+      <% @comments.each do |comment| %>
+          <div class="comment-image-box">
+            <img src="<%= @user.image_url %>" class="comment-image">
+          </div>
+          <p class="comment-body">
+            <%= comment.body %> </br>
+            <%= comment.created_at.localtime.strftime("Posted on %m/%d/%Y at %I:%M%p") %>
+          </p>
+          <div class="clearfix"></div>
+      <% end %>
+</div>
+
+  <%= link_to 'Add a Comment', new_chapter_comment_path(@chapter.id) %> |
   <% if @current_user == session[:user_id] %>
-  <%= link_to 'Delete Chapter', chapter_path(@chapter.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Delete Chapter', chapter_path(@chapter.id), method: :delete, data: { confirm: 'Are you sure?' } %> |
   <%= link_to 'Edit', edit_saga_chapter_path(@chapter.saga_id, @chapter) %> |
   <% end %>
   <%= link_to 'Back', user_path(session[:user_id]) %>
 </section>
+

@@ -26,6 +26,15 @@
     <p>
       <strong>City:</strong>
       <%= @user.city %>
+    </p>
+    <p>
+      <strong>State:</strong>
+      <%= @user.state %>
+    </p>
+    <p>
+      <strong>Country:</strong>
+      <%= @user.country %>
+    </p>
 
   </div>
 
@@ -33,10 +42,9 @@
 <section class="main">
     <h1>Sagas</h1>
     <% if @user.id == session[:user_id] %>
-    <%= link_to "Create New Saga", new_saga_path, class: "saga_build" %><br/>
+    <%= link_to "Create New Saga", new_saga_path, class: "saga_build" %> |
     <%= link_to "Get Some Ideas", chapters_path, class: "saga_build" %><br/>
     <% end %>
-
     <% @sagas.each do |saga| %> </br>
     <%= link_to(saga.title, saga_path(saga.id)) %>
     <% @chapters.each do |chapter| %>
