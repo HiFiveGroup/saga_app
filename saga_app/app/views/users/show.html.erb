@@ -44,6 +44,7 @@
 
     <% @sagas.each do |saga| %> </br>
     <%= link_to(saga.title, saga_path(saga.id)) %>
+      <%= will_paginate @sagas %>
     <% @chapters.each do |chapter| %>
         <% if chapter.saga_id == saga.id %>
         <ul>
@@ -52,8 +53,5 @@
         <% end %>
       <% end %>
     <% end %>
-    <%= link_to 'Edit', edit_user_path(@user) %>
-    <%= link_to 'Destroy', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
-  <h1 style="color: red"><%= notice %></h1>
-    <%= link_to 'Logout', session_path, method: :delete %>
+    <h1 style="color: red"><%= notice %></h1>
 </section>

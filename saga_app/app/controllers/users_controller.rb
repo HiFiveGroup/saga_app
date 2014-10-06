@@ -9,15 +9,14 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
-    @posts = Post.paginate(:user => params[:id], :per_page => 10)
+    @users = User.paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
     user = User.find(params[:id])
-    @sagas = Saga.where("user_id = ?", params[:id])
+    @sagas = Saga.where("user_id = ?", params[:id]).paginate(:page => params[:page], :per_page => 10)
     @chapters = Chapter.all
   end
 

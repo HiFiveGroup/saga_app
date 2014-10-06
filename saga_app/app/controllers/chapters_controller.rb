@@ -5,7 +5,7 @@ class ChaptersController < ApplicationController
   # GET /chapters.json
   def index
      user = User.find(session[:user_id])
-     @chapters = Chapter.where(saga_id: nil)
+     @chapters = Chapter.where(saga_id: nil).paginate(:page => params[:page], :per_page => 10)
      @sagas = Saga.where("user_id = ?", user.id)
      @chapter = Chapter.new
   end

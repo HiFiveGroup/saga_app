@@ -1,6 +1,6 @@
 <section class="main">
   <h1>What Other Adventurers Are Doing</h1>
-  <% @chapters.sample(9).each do |chapter| %>
+  <% @chapters.sample(10).each do |chapter| %>
   <div class="chapter_ideas">
    <%= link_to(chapter.title, chapter_path(chapter.id)) %>
    <br><br>
@@ -34,4 +34,5 @@
   <% end %>
   </div>
   <% end %>
+  <%= will_paginate @chapters %>
 </section>

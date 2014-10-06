@@ -16,7 +16,7 @@
         <!-- <th colspan="3"></th> -->
     </thead>
     <tbody>
-      <% @users.sample(10).each do |user| %>
+      <% @users.each do |user| %>
         <tr>
           <td><%= link_to(user.name, user_path(user.id)) %></td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -35,5 +35,5 @@
       <br>
     </tbody>
   </table>
-  <%= will_paginate @posts %>
+  <%= will_paginate @users %>
 </section>
