@@ -1,14 +1,13 @@
 <section class="main">
   <h1> PROFILE </h1>
-  <%= link_to("Create New Saga", new_saga_path) %>
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<%= link_to("Get Some Ideas", chapters_path) %><br/>
+  <%= link_to("Get Some Ideas", chapters_path) %><br/>
 
-<div class="profile_info">
-  <p>
-    <img src="<%= @user.image_url %>">
-  </p>
+  <div class="profile_info">
+    <p>
+      <img src="<%= @user.image_url %>">
+    </p>
     <p>
       <strong>Name:</strong>
       <%= @user.name %>
@@ -32,23 +31,28 @@
       <strong>Country:</strong>
       <%= @user.country %>
     </p>
+    <%= link_to 'Edit Profile', edit_user_path(@user) %>
+    <%= link_to 'Delete Profile', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
+  </div>
+
   <div class="sagas">
 
     <h1>Sagas</h1>
+    <% if @user.id == session[:user_id] %>
     <%= link_to("Create New Saga", new_saga_path) %>
-    <% @sagas.each do |saga| %> </br>
-    <%= link_to(saga.title, saga_path(saga.id)) %>
-    <% @chapters.each do |chapter| %>
+    <% end %>
+    <h1> <% @sagas.each do |saga| %> </h1> </br>
+      <h2><%= link_to(saga.title, saga_path(saga.id)) %></h2><%= link_to 'Add a Chapter', new_saga_chapter_path(saga.id) %>
+      <% @chapters.each do |chapter| %>
         <% if chapter.saga_id == saga.id %>
         <ul>
         <li><%= link_to(chapter.title, chapter_path(chapter.id)) %></li>
         </ul>
         <% end %>
       <% end %>
-    <% end %>
-    <%= link_to 'Edit', edit_user_path(@user) %>
-    <%= link_to 'Destroy', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
+      <%= link_to 'Edit', edit_user_path(@user) %>
+      <%= link_to 'Destroy', user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
 
-    <%= link_to 'Logout', session_path, method: :delete %>
+      <%= link_to 'Logout', session_path, method: :delete %>
   </div>
 </section>

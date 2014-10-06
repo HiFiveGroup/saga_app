@@ -1,38 +1,38 @@
 <section class="main">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @chapter.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @chapter.title %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @chapter.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @chapter.description %>
+  </p>
 
-<p>
-  <strong>Image url:</strong>
-  <img src="<%= @chapter.image_url %>" width="400">
-</p>
+  <p>
+    <strong>Image url:</strong>
+    <img src="<%= @chapter.image_url %>" width="400">
+  </p>
 
-<p>
-  <strong>Scope:</strong>
-  <%= @chapter.scope %>
-</p>
+  <p>
+    <strong>Scope:</strong>
+    <%= @chapter.scope %>
+  </p>
 
-<p>
-  <strong>Tags:</strong>
-  <%= @chapter.tags %>
-</p>
+  <p>
+    <strong>Tags:</strong>
+    <%= @chapter.tags %>
+  </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @chapter.category %>
-</p>
+  <p>
+    <strong>Category:</strong>
+    <%= @chapter.category %>
+  </p>
 
 
-
-<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
-<%= link_to 'Back', user_path(session[:user_id]) %>
+  <%= link_to 'Delete Chapter', chapter_path(@chapter.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Edit', edit_chapter_path(@chapter) %> |
+  <%= link_to 'Back', user_path(session[:user_id]) %>
 </section>
