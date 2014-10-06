@@ -1,6 +1,4 @@
 module ChaptersHelper
-<<<<<<< HEAD
-=======
 
   def add_tag_to_chapter(chapter_id, tag_string)
     # adds tags to a chapter either one at a time
@@ -85,7 +83,6 @@ module ChaptersHelper
     end
   end
 
->>>>>>> tag_capability
 end
 
 # require './app/helpers/chapters_helper'
