@@ -36,6 +36,9 @@ class ChaptersController < ApplicationController
   def create
       if params[:chapter][:secret]
        chapter = Chapter.create(chapter_params)
+      elsif
+        params[:saga] == nil
+        flash[:notice] = "You Don't have any Sagas. Create one Now!!!"
       else
       saga = Saga.find_by(title: params[:saga])
       saga_id = saga.id
