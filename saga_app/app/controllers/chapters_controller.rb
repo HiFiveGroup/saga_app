@@ -14,7 +14,7 @@ class ChaptersController < ApplicationController
   # GET /chapters/1.json
   def show
     if session[:user_id] == nil
-      redirect_to(login_path)
+      redirect_to login_path
     else
       chapter = params[:id]
       @current_user = Saga.find(Chapter.find(chapter).saga_id).user_id
@@ -48,8 +48,8 @@ class ChaptersController < ApplicationController
         flash[:notice] = "You Don't have any Sagas. Create one Now!!!"
       else
       saga = Saga.find_by(title: params[:saga], user_id: session[:user_id])
-      saga_id = saga.id
       chapter = Chapter.create(chapter_params)
+      saga_id = saga.id
       chapter.saga_id = saga_id
       chapter.save
     end

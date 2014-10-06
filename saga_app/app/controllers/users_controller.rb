@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all.sort.reverse.reject {|user| user == current_user}
   end
 
   # GET /users/1
