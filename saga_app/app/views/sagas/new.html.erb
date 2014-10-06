@@ -1,5 +1,7 @@
-<h1>New saga</h1>
+<section class="main">
+	<h1>New saga</h1>
 
-<%= render 'form' %>
+	<%= render 'form' %>
 
-<%= link_to 'Back', sagas_path %>
+	<%= link_to 'Back', user_path(session[:user_id]) %>
+</section>

@@ -1,4 +1,4 @@
-<%= form_for(@comment) do |f| %>
+<%= form_for(@comment, url: chapter_comments_path(params[:chapter_id])) do |f| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -19,14 +19,7 @@
     <%= f.label :body %><br>
     <%= f.text_field :body %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :chapter_id %><br>
-    <%= f.text_field :chapter_id %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
