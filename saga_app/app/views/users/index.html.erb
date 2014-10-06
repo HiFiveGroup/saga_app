@@ -16,7 +16,7 @@
         <!-- <th colspan="3"></th> -->
     </thead>
     <tbody>
-      <% @users.each do |user| %>
+      <% @users.sample.each do |user| %>
         <tr>
           <td><%= link_to(user.name, user_path(user.id)) %></td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>

@@ -44,11 +44,10 @@
 
     <% @sagas.each do |saga| %> </br>
     <%= link_to(saga.title, saga_path(saga.id)) %>
-      <%= will_paginate @sagas %>
-    <% @chapters.each do |chapter| %>
+     <% @chapters.each do |chapter| %>
         <% if chapter.saga_id == saga.id %>
         <ul>
-        <li><%= link_to(chapter.title, chapter_path(chapter.id)) %></li>
+        <li><img class="chapter" src="<%= chapter.image_url %>">&nbsp;&nbsp;<%= link_to(chapter.title, chapter_path(chapter.id)) %></li>
         </ul>
         <% end %>
       <% end %>
