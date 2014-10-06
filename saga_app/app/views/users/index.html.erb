@@ -4,10 +4,11 @@
   <table>
     <thead>
       <tr>
+        <th>Image url</th>
         <th>Name</th>
 
         <th></th>
-        <th>Image url</th>
+
         <th></th>
         <th>City</th>
         <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
@@ -18,21 +19,19 @@
 
     </thead>
     <tbody>
-      <% @users.sample(10).each do |user| %>
+      <% @users.each do |user| %>
         <tr>
-
-          <td><%= link_to(user.name, user_path(user.id)) %></td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td><img src="<%= user.image_url %>"width="400" margin="50px"></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><%= link_to(user.name, user_path(user.id)) %></td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td><%= user.city %></td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td><%= user.state %></td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td><%= user.country %></td>
-          <!-- <td><%= link_to 'Show', user %></td>
-          <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          <td><%= link_to 'Show', user %></td>
+
 
         </tr>
       <% end %>
@@ -42,7 +41,7 @@
 
   <br>
 
-  <%= link_to 'New User', new_user_path %>
+
 </section>
 
 </section>
