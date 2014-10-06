@@ -1,18 +1,18 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.profile_info {
-  text-align: left;
-  float: left;
+img {
+background: url(blah.jpg) 50% 50% no-repeat; /* 50% 50% centers image in div */
+width: 200px;
+height: 200px;
 }
-
-.sagas {
-  text-align: center;
-  float: center;
-
+.left {
+	float: left;
 }
-
+.right {
+	float: left;
+	margin: 40px 0 0 55px;
+}
 li {
   list-style-type: none;
 }

@@ -14,6 +14,9 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
+    user = User.find(session[:user_id])
+    @user_id = user.id
+    @chapter_id = params[:chapter_id]
     @comment = Comment.new
   end
 
@@ -24,17 +27,9 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
-
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render :show, status: :created, location: @comment }
-      else
-        format.html { render :new }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
-    end
+    @comment = Comment.create(comment_params)
+    @chapter_id = params[:comment][:chapter_id]
+    redirect_to(chapter_path(@chapter_id))
   end
 
   # PATCH/PUT /comments/1
