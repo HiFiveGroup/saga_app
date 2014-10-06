@@ -40,11 +40,16 @@
     <% @sagas.each do |saga| %> </br>
     <%= link_to(saga.title, saga_path(saga.id)) %>
     <% @chapters.each do |chapter| %>
+
         <% if chapter.saga_id == saga.id %>
         <ul>
         <li><%= link_to(chapter.title, chapter_path(chapter.id)) %></li>
+
         </ul>
         <% end %>
+
       <% end %>
+       <p><%= link_to 'Add a Chapter', new_saga_chapter_path(saga.id) %></p>
     <% end %>
 </section>
+

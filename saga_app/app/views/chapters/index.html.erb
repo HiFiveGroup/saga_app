@@ -2,7 +2,7 @@
   <h1>What Other Adventurers Are Doing</h1>
   <% @chapters.sample(9).each do |chapter| %>
   <div class="chapter_ideas">
-   <%= link_to(chapter.title, chapter_path(chapter.id)) %>
+  <%= chapter.title %>
    <br><br>
       <div class="thumb">
     <img src="<%= chapter.image_url %>">
