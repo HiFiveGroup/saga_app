@@ -13,6 +13,10 @@ class ChaptersController < ApplicationController
   # GET /chapters/1
   # GET /chapters/1.json
   def show
+    @user = session[:user_id]
+    @chapter = params[:id]
+    binding.pry
+    @comment = Comment.where(user_id: @user, chapter_id: @chapter)
   end
 
   # GET /chapters/new
