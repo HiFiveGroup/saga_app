@@ -13,24 +13,29 @@ class ChaptersController < ApplicationController
   # GET /chapters/1
   # GET /chapters/1.json
   def show
-    chapter = params[:id]
-    @current_user = Saga.find(Chapter.find(chapter).saga_id).user_id
-    @user = User.find(session[:user_id])
-    @chapter_id = params[:id]
-    @comments = Comment.where(user_id: @user.id, chapter_id: @chapter_id)
+    if session[:user_id] == nil
+      redirect_to(login_path)
+    else
+      chapter = params[:id]
+      @current_user = Saga.find(Chapter.find(chapter).saga_id).user_id
+      @user = User.find(session[:user_id])
+      @chapter_id = params[:id]
+      @comments = Comment.where(user_id: @user.id, chapter_id: @chapter_id)
+    end
   end
 
   # GET /chapters/new
   def new
-    user = User.find(session[:user_id])
-    sagas = Saga.where("user_id = ?", user.id)
-    @sagas = sagas.select { |saga| saga.title }
-    @saga_id = params[:saga_id]
-    @chapter = Chapter.new
+      user = User.find(session[:user_id])
+      sagas = Saga.where("user_id = ?", user.id)
+      @sagas = sagas.select { |saga| saga.title }
+      @saga_id = params[:saga_id]
+      @chapter = Chapter.new
   end
 
   # GET /chapters/1/edit
   def edit
+    @saga_id = params[:saga_id]
   end
 
   # POST /chapters
@@ -54,6 +59,8 @@ class ChaptersController < ApplicationController
   # PATCH/PUT /chapters/1
   # PATCH/PUT /chapters/1.json
   def update
+    @chapter.update(chapter_params)
+    redirect_to user_path(session[:user_id])
   end
 
   # DELETE /chapters/1
@@ -71,6 +78,6 @@ class ChaptersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chapter_params
-      params.require(:chapter).permit(:title, :desciption, :image_url, :scope, :tags, :category, :saga_id)
+      params.require(:chapter).permit(:title, :description, :image_url, :scope, :tags, :category, :saga_id)
     end
 end
