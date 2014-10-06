@@ -33,6 +33,8 @@ class SagasController < ApplicationController
   # PATCH/PUT /sagas/1
   # PATCH/PUT /sagas/1.json
   def update
+    @saga.update(saga_params)
+    redirect_to saga_path(params[:id])
   end
 
   # DELETE /sagas/1

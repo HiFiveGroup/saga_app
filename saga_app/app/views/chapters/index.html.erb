@@ -2,12 +2,12 @@
   <h1>What Other Adventurers Are Doing</h1>
   <% @chapters.sample(10).each do |chapter| %>
   <div class="chapter_ideas">
-   <%= link_to(chapter.title, chapter_path(chapter.id)) %>
+  <%= chapter.title %>
    <br><br>
       <div class="thumb">
     <img src="<%= chapter.image_url %>">
   </div>
-  <br>    
+  <br>
     <%= form_for @chapter do |f| %>
 
     <label>"Choose A Saga"</label>
@@ -27,6 +27,8 @@
       <%= f.hidden_field(:tags, :value => chapter.tags) %>
       <%= f.hidden_field(:category, :value => chapter.category )%>
       <%= f.hidden_field(:saga_id, :value => @saga_id) %>
+      <%= f.hidden_field(:chapter_id, :value => chapter.id) %>
+
       <br><br>
     <div class="actions">
       <%= f.submit "Add This Chapter" %>

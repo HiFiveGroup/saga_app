@@ -46,10 +46,15 @@ Rails.application.routes.draw do
       resources :chapters
     end
 
+    resources :chapters do
+      resources :comments
+    end
+
 #Route for a user to add a comment to a chapter
   resources :chapters do
     resources :comments
   end
+
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
