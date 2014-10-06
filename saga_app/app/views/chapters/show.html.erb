@@ -31,6 +31,12 @@
 </p>
 
 
+
 <%= link_to 'Leave a comment', new_comment_path %> |
+
+<%= link_to 'Delete Chapter', chapter_path(@chapter.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'Leave a comment', new_chapter_comment_path(@chapter.id) %>
+
 <%= link_to 'Edit', edit_chapter_path(@chapter) %> |
 <%= link_to 'Back', chapters_path %>

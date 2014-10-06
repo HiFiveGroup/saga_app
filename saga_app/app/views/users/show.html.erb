@@ -1,5 +1,4 @@
 <h1> PROFILE </h1>
-<%= link_to 'Logout', session_path, method: :delete %>
 
 <p id="notice"><%= notice %></p>
 
@@ -51,13 +50,19 @@
 <div class="sagas">
 
   <h1>Sagas</h1>
+  <% if @user.id == session[:user_id] %>
   <%= link_to("Create New Saga", new_saga_path) %>
+  <% end %>
   <h1> <% @sagas.each do |saga| %> </h1> </br>
-    <h2><%= link_to(saga.title, saga_path(saga.id)) %></h2>
+    <h2><%= link_to(saga.title, saga_path(saga.id)) %></h2><%= link_to 'Add a Chapter', new_saga_chapter_path(saga.id) %>
     <% @chapters.each do |chapter| %>
       <% if chapter.saga_id == saga.id %>
       <ul>
+
       <li><%= link_to(chapter.title, saga_chapter_path(:saga_id, chapter.id)) %></li>
+
+      <li><%= link_to(chapter.title, chapter_path(chapter.id)) %></li>
+
       </ul>
       <% end %>
     <% end %>
