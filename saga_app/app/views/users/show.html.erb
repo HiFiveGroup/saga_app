@@ -43,8 +43,7 @@
 
         <% if chapter.saga_id == saga.id %>
         <ul>
-        <li><%= link_to(chapter.title, chapter_path(chapter.id)) %></li>
-
+        <li><img class="chapter" src="<%= chapter.image_url %>"><%= link_to(chapter.title, chapter_path(chapter.id)) %></li>
         </ul>
         <% end %>
 
