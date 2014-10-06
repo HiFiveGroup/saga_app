@@ -29,9 +29,6 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create({:title => params[:comment][:title], :body => params[:comment][:body], :user_id => session[:user_id], :chapter_id => params[:chapter_id]})
     redirect_to(chapter_path(params[:chapter_id]))
-    @comment = Comment.create(comment_params)
-    @chapter_id = params[:comment][:chapter_id]
-    redirect_to(chapter_path(@chapter_id))
   end
 
 
