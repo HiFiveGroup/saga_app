@@ -85,7 +85,8 @@ class UsersController < ApplicationController
         :city,
         :state,
         :country,
-        :password
+        :password,
+        :tag_list
         )
     end
 

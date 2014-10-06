@@ -72,18 +72,15 @@ module ChaptersHelper
 
   def self.find_similar_users(user_id)
     # returns all other users who share any tags with current user
-    user_tags = self.find_tag_by_user(user_id)
+    user_tags = self.find_tag_by_user(user_id).flatten.uniq
     unless user_tags.empty?
-      other_users = user_tags.map do |user_tag|
+      users = user_tags.map do |user_tag|
         self.find_user_by_tag(user_tag)
       end
-      other_users.flatten!.compact!.uniq!
+      other_users = users.flatten.compact.uniq
       other_users.delete_if { |user| user.id == user_id }
       other_users
     end
   end
 
 end
-
-# require './app/helpers/chapters_helper'
-# include (ChaptersHelper)
