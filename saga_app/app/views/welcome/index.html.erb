@@ -5,7 +5,8 @@
 				<% if session[:user_id] = nil %>
 					<a href="#"><%= chapter.title %></a>
 				<% else  %>
-					<a href="chapters/<%= chapter.id %>"><%= chapter.title %></a>
+					<%= link_to(chapter.title, chapter_path(chapter.id)) %>
+					
 				<% end %>
 				
 			</div> 
