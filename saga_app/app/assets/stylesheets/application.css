@@ -80,26 +80,6 @@
   
 }
 
-.sidebar {
-  position: absolute;
-  float: right;
-  right:0;
-  max-width: 250px;
-  padding: 15px;
-  margin-right: 25px;
-  background-color: white;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
-  -moz-box-shadow: 0px 0px 5px #000000;
-  -webkit-box-shadow: 0px 0px 5px #000000;
-  box-shadow: 0px 0px 5px #000000;
-  /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/ 
-
-}
-
-
 footer{
   clear: both;
   width: 100%;

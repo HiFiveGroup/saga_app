@@ -13,6 +13,9 @@ class ChaptersController < ApplicationController
   # GET /chapters/1
   # GET /chapters/1.json
   def show
+    @user = User.find(session[:user_id])
+    @chapter_id = params[:id]
+    @comments = Comment.where(user_id: @user.id, chapter_id: @chapter_id)
   end
 
   # GET /chapters/new
