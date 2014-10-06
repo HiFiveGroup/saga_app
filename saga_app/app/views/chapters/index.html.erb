@@ -14,7 +14,6 @@
     <option value="<%= saga.title %>"><%= saga.title %></option>
     <% saga = Saga.find_by(title: saga.title, user_id: session[:user_id]) %>
     <% @saga_id = saga.id %>
-
     <% end %>
   </select>
     <%= f.hidden_field(:title, :value => chapter.title) %>

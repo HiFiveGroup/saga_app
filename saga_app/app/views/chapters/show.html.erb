@@ -30,7 +30,15 @@
   <%= @chapter.category %>
 </p>
 
+<span class="comments">
+  <label for="comments"> User Comments</label>
+  <% @comments.each do |comment| %>
+    <h1><%= comment.title %></h1>
+    <h2><%= comment.body %></h2>
+  <% end %>
+</span>
 
+<%= link_to 'Add a Comment', new_chapter_comment_path(@chapter.id) %>
 <%= link_to 'Delete Chapter', chapter_path(@chapter.id), method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Edit', edit_chapter_path(@chapter) %> |
 <%= link_to 'Back', chapters_path %>
