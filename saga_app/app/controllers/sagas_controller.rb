@@ -33,25 +33,15 @@ class SagasController < ApplicationController
   # PATCH/PUT /sagas/1
   # PATCH/PUT /sagas/1.json
   def update
-    respond_to do |format|
-      if @saga.update(saga_params)
-        format.html { redirect_to @saga, notice: 'Saga was successfully updated.' }
-        format.json { render :show, status: :ok, location: @saga }
-      else
-        format.html { render :edit }
-        format.json { render json: @saga.errors, status: :unprocessable_entity }
-      end
-    end
+    @saga.update(saga_params)
+    redirect_to saga_path(params[:id])
   end
 
   # DELETE /sagas/1
   # DELETE /sagas/1.json
   def destroy
     @saga.destroy
-    respond_to do |format|
-      format.html { redirect_to sagas_url, notice: 'Saga was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to user_path(session[:user_id])
   end
 
   private
