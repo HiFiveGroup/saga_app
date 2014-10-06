@@ -14,7 +14,9 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    # binding.pry
+    user = User.find(session[:user_id])
+    @user_id = user.id
+    @chapter_id = params[:chapter_id]
     @comment = Comment.new
   end
 
@@ -25,9 +27,11 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    # binding.pry
     @comment = Comment.create({:title => params[:comment][:title], :body => params[:comment][:body], :user_id => session[:user_id], :chapter_id => params[:chapter_id]})
     redirect_to(chapter_path(params[:chapter_id]))
+    @comment = Comment.create(comment_params)
+    @chapter_id = params[:comment][:chapter_id]
+    redirect_to(chapter_path(@chapter_id))
   end
 
 
