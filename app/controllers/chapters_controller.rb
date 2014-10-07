@@ -18,7 +18,11 @@ class ChaptersController < ApplicationController
     else
       chapter = params[:id]
       @current_user = Saga.find(Chapter.find(chapter).saga_id).user_id
-      @user = User.find(session[:user_id])
+
+      comment = Comment.find(chapter_id: params[:chapter_id])
+      user_comment = comment.user_id
+      @user = User.find(user_comment)
+
       @chapter_id = params[:id]
       @comments = Comment.where(chapter_id: @chapter_id)
     end
