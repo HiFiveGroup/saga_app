@@ -29,7 +29,6 @@
   background: -ms-linear-gradient(top, #000000 0%,#666666 100%); /* IE10+ */
   background: linear-gradient(to bottom, #000000 0%,#666666 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#666666',GradientType=0 ); /* IE6-9 */
-  copy
   height: 100px;
   color: white;
   border-bottom: 2px groove black;
