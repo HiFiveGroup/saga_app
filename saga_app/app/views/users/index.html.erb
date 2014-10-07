@@ -19,7 +19,7 @@
 
     </thead>
     <tbody>
-      <% @users.sample.each do |user| %>
+      <% @users.sample(10).each do |user| %>
         <tr>
           <td><%= link_to(user.name, user_path(user.id)) %></td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
