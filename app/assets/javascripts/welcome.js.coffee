@@ -1,6 +1,6 @@
 $ ->
   console.log("ran!")
-  $(".left img").each (i) ->
+  $(".splash img").each (i) ->
     $(this).delay((i++) * 500).fadeTo 1000, 1
     return
 

@@ -1,16 +1,16 @@
 <div id="splash">
-	<% @chapters.sample(9).each do |chapter| %>
-	<div class="left">
-			<div class="overlay">
-				<% if session[:user_id] = nil %>
-					<a href="#"><%= chapter.title %></a>
-				<% else  %>
-					<%= link_to(chapter.title, chapter_path(chapter.id)) %>
+<% @chapters.sample(9).each do |chapter| %>
+<div class="splash">
+<div class="overlay">
+<% if session[:user_id] = nil %>
+<a href="#"><%= chapter.title %></a>
+<% else  %>
+<%= link_to(chapter.title, chapter_path(chapter.id)) %>
 
-				<% end %>
+<% end %>
 
-			</div>
-			<img src="<%= chapter.image_url %>">
-	</div>
-	<% end %>
+</div>
+<img src="<%= chapter.image_url %>">
+</div>
+<% end %>
 </div>
