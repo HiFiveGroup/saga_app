@@ -6,10 +6,10 @@
 					<a href="#"><%= chapter.title %></a>
 				<% else  %>
 					<%= link_to(chapter.title, chapter_path(chapter.id)) %>
-					
+
 				<% end %>
-				
-			</div> 
+
+			</div>
 			<img src="<%= chapter.image_url %>">
 	</div>
 	<% end %>
