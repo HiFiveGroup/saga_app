@@ -20,7 +20,7 @@ class ChaptersController < ApplicationController
       @current_user = Saga.find(Chapter.find(chapter).saga_id).user_id
       @user = User.find(session[:user_id])
       @chapter_id = params[:id]
-      @comments = Comment.where(user_id: @user.id, chapter_id: @chapter_id)
+      @comments = Comment.where(chapter_id: @chapter_id)
     end
   end
 
