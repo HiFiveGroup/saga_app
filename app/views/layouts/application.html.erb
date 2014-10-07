@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SagaApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	 <nav>
+	    <% if session[:user_id] %>
+		    <%= link_to 'SAGA', user_path(session[:user_id]), class: 'logo' %>
+	    <% else %>
+	    	<%= link_to 'SAGA', root_path, class: 'logo' %>
+	    <% end %>
+		<ul class="nav">
+
+      <% if session[:user_id] %>
+        <%= link_to 'Logout', session_path, method: :delete %>
+        <% else %>
+			<li class="login"><%= link_to 'Log In', login_path %></li>
+        <li class="signup"><%= link_to 'Sign Up', new_user_path %></li>
+      <% end %>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		
+	<%= yield %>
+	
+	</div>
+		
+	<% if current_page?(controller: 'welcome', action: 'index')
+ %>
+		<footer class="relative">
+	   		&copy;2014 HiFive Group
+		</footer>
+	<% else %>
+		<footer>
+	   		&copy;2014 HiFive Group
+		</footer>
+	<% end %>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<section class="main">
+  <h1>Fellow Adventurers</h1>
+
+  <table>
+
+    <tbody>
+      <% @users.sample(10).each do |user| %>
+        <tr>
+          <td><%= link_to(user.name, user_path(user.id)) %></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><img src="<%= user.image_url %>"width="400"></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><%= user.city %></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><%= user.state %></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><%= user.country %></td>
+          <td><%= link_to 'Show', user %></td>
+
+
+        </tr>
+      <% end %>
+      <br>
+    </tbody>
+  </table>
+  <%= will_paginate @users %>
+</section>

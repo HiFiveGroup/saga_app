@@ -1,0 +1,45 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.chapter {
+  width: 50px;
+  height: 40px;
+}
+
+img {
+background: url(blah.jpg) 50% 50% no-repeat; /* 50% 50% centers image in div */
+width: 200px;
+height: 200px;
+}
+
+.left {
+	float: left;
+}
+.right {
+	float: left;
+	margin: 40px 0 0 55px;
+}
+li {
+  list-style-type: none;
+}
+
+.main_user {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  max-width: 1000px;
+  padding: 15px;
+  background-color: white;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+  -moz-box-shadow: 0px 0px 5px #000000;
+  -webkit-box-shadow: 0px 0px 5px #000000;
+  box-shadow: 0px 0px 5px #000000;
+  /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+  overflow: scroll;
+
+}
+
