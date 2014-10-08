@@ -6,15 +6,14 @@
 <br>
 In the Seven Habits of Highly Effective People, Steven Covey describes all the activities of modern life landing somewhere between four quadrants:
 
-
 1. Urgent and important
 2. Urgent but not important
 3. Important, but not urgent
 4. Not urgent, not important
 
-And on this chart, which would you describe as *crucial*?
+And on this chart, which do you think he describes as *crucial*?
 
-You may be suprised to find that it's number three: Important but not urgent.
+Would it surprise you to hear that it's number three? Important but not urgent.
 
 The preparation and planning of our lives, the striving towards what we honestly want and sensible prevention
 of the things we don't. Building relationships, building our own bodies, and truly enjoying the world.
