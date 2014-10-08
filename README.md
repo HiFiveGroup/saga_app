@@ -4,7 +4,7 @@
 
 ####Friends. Family. Building. Exploring.#####
 <br>
-In the Seven Habits of Highly Effective People, author Steven Covey describes all the activities of modern life landing somewhere between four quadrants:
+In the Seven Habits of Highly Effective People, author Steven Covey describes all the activities of modern life as residing somewhere on one of four quadrants:
 
 1. Urgent and important
 2. Urgent but not important
