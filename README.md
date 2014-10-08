@@ -28,7 +28,7 @@ Don't we all want a life filled with adventure, however we define it?
 
 Enter **Saga**.
 
-We created **Saga** as an attempt to highlight our own true desires and put an end to the constant postponement of living. Use **Saga** to list your dreams and treat them the way you treat any other goal, with details, deadlines and accountability. Meet other people with the same wild interests or lofty aspirations, create challenges across continets, and transform you life from something you watch to something you do.
+We created **Saga** as an attempt to highlight our own true desires and put an end to the constant postponement of living. Use **Saga** to list your dreams and treat them the way you treat any other goal, with details, deadlines and accountability. Meet other people with the same wild interests or lofty aspirations, create challenges across continets, and transform your life from something you watch to something you do.
 
 <br>
 
@@ -46,11 +46,11 @@ ___
 #### Technologies Used ####
 
  * **Ruby on Rails v4.1** _Our favorite open-source framework.<br>
-  * **JQuery** _The cross-platform JavaScript library designed to simplify client-side scripting HTML._ <br>
+ * **JQuery** _The cross-platform JavaScript library designed to simplify client-side scripting HTML._ <br>
  *  **CSS3** _The standard of cascading style sheets_<br>
-  * **HTML5** _The language of the Internet._<br>
-  * **Will_Paginiate Gem** _A pagination library that integrates with Ruby on Rails, Sinatra, Merb, DataMapper and Sequel._<br>
-  * **ActsAsTaggableOn Gem** _A tagging plugin for Rails applications that allows for custom tagging along dynamic contexts.<br>
+ * **HTML5** _The language of the Internet._<br>
+ * **Will_Paginiate Gem** _A pagination library that integrates with Ruby on Rails, Sinatra, Merb, DataMapper and Sequel._<br>
+ * **ActsAsTaggableOn Gem** _A tagging plugin for Rails applications that allows for custom tagging along dynamic contexts.<br>
 ___
 
 ###Saga project ERD###
